@@ -77,7 +77,7 @@ def findFilmTitle():
         con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
 
         # get a category from the user
-        filmTitle = str(raw_input("Enter the book's title: "))
+        filmTitle = str(raw_input("Enter the film's title: "))
 
         # create and execute query
         rs = con.cursor()
@@ -110,7 +110,7 @@ def findFilmDirector():
         con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
 
         # get a category from the user
-        directorName = str(raw_input("Enter the author's name: "))
+        directorName = str(raw_input("Enter the director's name: "))
 
         # create and execute query
         rs = con.cursor()
@@ -123,6 +123,71 @@ def findFilmDirector():
         print "Director Name | Title | Branch Name | Num Copies"
         for (directorName, title, branchName, numCopies) in rs:
             print str(directorName) + " | " + str(title) + " | " + str(branchName) + " | " + str(numCopies)
+        
+        rs.close()
+        con.close()
+
+    except mysql.connector.Error as err:
+        print (err)
+
+# This function searches Films by DirectorCredits
+def findAudioArtist():
+    try:
+        # connection info
+        usr = 'trevapp'
+        pwd = 'bowers321'
+        hst = 'localhost'
+        dab = 'tgreenside_DB'
+        # create a connection
+        con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
+
+        # get a category from the user
+        artistName = str(raw_input("Enter the artist's name: "))
+
+        # create and execute query
+        rs = con.cursor()
+        # query used to retrieve the country's name, code, gdp, and inflation values
+        # using constraints given in comments of function header
+        query = "SELECT a.artistName, ad.title, lb.branchName, COUNT(i.inventory_id) AS NUM_COPIES FROM (LibraryBranch lb JOIN Inventory i USING (branchID) JOIN Audio ad ON ad.audioID = i.copy_id) JOIN ArtistCredits a USING (audioID) WHERE a.artistName = '" + artistName + "' GROUP BY a.artistName, ad.title, lb.branchName ORDER BY NUM_COPIES DESC"
+        rs.execute(query)
+        
+        # print the result
+        print "Artist Name | Title | Branch Name | Num Copies"
+        for (artistName, title, branchName, numCopies) in rs:
+            print str(artistName) + " | " + str(title) + " | " + str(branchName) + " | " + str(numCopies)
+        
+        rs.close()
+        con.close()
+
+    except mysql.connector.Error as err:
+        print (err)
+
+# This function searches Audio recordings by Title
+def findFilmTitle():
+    try:
+        # connection info
+        usr = 'trevapp'
+        pwd = 'bowers321'
+        hst = 'localhost'
+        dab = 'tgreenside_DB'
+        # create a connection
+        con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
+
+        # get a category from the user
+        audioTitle = str(raw_input("Enter the item's title: "))
+
+        # create and execute query
+        rs = con.cursor()
+        # query used to retrieve the country's name, code, gdp, and inflation values
+        # using constraints given in comments of function header
+        query = "SELECT a.artistName, ad.title, lb.branchName, COUNT(i.inventory_id) AS NUM_COPIES FROM (LibraryBranch lb JOIN Inventory i USING (branchID) JOIN Audio ad ON ad.audioID = i.copy_id) JOIN ArtistCredits a USING (audioID) WHERE ad.title = '" + audioTitle + "' GROUP BY a.artistName, ad.title, lb.branchName ORDER BY NUM_COPIES DESC;"
+
+        rs.execute(query)
+        
+        # print the result
+        print "Artist Name | Title | Branch Name | Num Copies"
+        for (artistName, title, branchName, numCopies) in rs:
+            print str(artistName) + " | " + str(title) + " | " + str(branchName) + " | " + str(numCopies)
         
         rs.close()
         con.close()
