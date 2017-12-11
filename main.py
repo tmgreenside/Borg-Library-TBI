@@ -8,7 +8,7 @@ import BorgLibrary
 # This function displays all main menu items and gets
 # a selection from the user.
 def selectMainMenu():
-	options = ["Search Items", "Show Holds", "Show Library Stats", "Exit"]
+	options = ["Search Items", "Show Holds", "Show Library Stats", "View Full Branch Inventories", "Exit"]
 
 	for i in range(len(options)):
 		print str(i) + ": " + options[i]
