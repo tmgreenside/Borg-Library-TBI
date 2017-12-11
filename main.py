@@ -45,7 +45,7 @@ def searchInventory():
 		if choice == "title":
 			Inventory.findFilmTitle()
 		elif choice == "director":
-			Inventory.findDirectorAuthor()
+			Inventory.findFilmDirector()
 	elif selectMedium == "Audio":
 		for attr in bookAttrs:
 			print attr
@@ -53,7 +53,7 @@ def searchInventory():
 		if choice == "title":
 			Inventory.findAudioTitle()
 		elif choice == "artist":
-			Inventory.findArtistAuthor()
+			Inventory.findAudioArtist()
 	else:
 		print "Invalid selection."
 

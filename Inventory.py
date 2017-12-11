@@ -116,7 +116,7 @@ def findFilmDirector():
         rs = con.cursor()
         # query used to retrieve the country's name, code, gdp, and inflation values
         # using constraints given in comments of function header
-        query = "SELECT d.directorName, b.title, lb.branchName, COUNT(i.inventory_id) AS NUM_COPIES FROM (LibraryBranch lb JOIN Inventory i USING (branchID) JOIN Film f ON f.filmID = i.copy_id) JOIN DirectorCredits d USING (filmID) WHERE d.directorName = '" + directorName + "' GROUP BY d.directorName, f.title, lb.branchName ORDER BY NUM_COPIES DESC"
+        query = "SELECT d.directorName, f.title, lb.branchName, COUNT(i.inventory_id) AS NUM_COPIES FROM (LibraryBranch lb JOIN Inventory i USING (branchID) JOIN Film f ON f.filmID = i.copy_id) JOIN DirectorCredits d USING (filmID) WHERE d.directorName = '" + directorName + "' GROUP BY d.directorName, f.title, lb.branchName ORDER BY NUM_COPIES DESC"
         rs.execute(query)
         
         # print the result
@@ -163,7 +163,7 @@ def findAudioArtist():
         print (err)
 
 # This function searches Audio recordings by Title
-def findFilmTitle():
+def findAudioTitle():
     try:
         # connection info
         usr = 'trevapp'
