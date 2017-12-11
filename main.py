@@ -3,6 +3,7 @@
 """
 
 import Inventory
+import BorgLibrary
 
 # This function displays all main menu items and gets
 # a selection from the user.
