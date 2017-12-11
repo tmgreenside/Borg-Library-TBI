@@ -35,30 +35,37 @@ def searchInventory():
 	print "\n"
 		
 	selectMedium = raw_input("Please select from above: ")
+	print "\n"
 
 	if selectMedium == "Book":
 		for attr in bookAttrs:
 			print attr
 		choice = raw_input("Please select a search parameter: ").lower()
 		if choice == "title":
+                        print "\n"
 			Inventory.findBookTitle()
 		elif choice == "author":
+                        print "\n"
 			Inventory.findBookAuthor()
 	elif selectMedium == "Film":
 		for attr in filmAttrs:
 			print attr
 		choice = raw_input("Please select a search parameter: ").lower()
 		if choice == "title":
+                        print "\n"
 			Inventory.findFilmTitle()
 		elif choice == "director":
+                        print "\n"
 			Inventory.findFilmDirector()
 	elif selectMedium == "Audio":
 		for attr in bookAttrs:
 			print attr
 		choice = raw_input("Please select a search parameter: ").lower()
 		if choice == "title":
+                        print "\n"
 			Inventory.findAudioTitle()
 		elif choice == "artist":
+                        print "\n"
 			Inventory.findAudioArtist()
 	else:
 		print "Invalid selection."
@@ -71,8 +78,10 @@ def showLibraryStats():
 
 	for i in range(len(options)):
 		print str(i) + ": " + options[i]
+	print "\n"
 
 	selection = int(raw_input("Please enter the number for your selection: "))
+	print "\n"
 
 	if options[selection] == "Which branch has most checkouts":
 		BorgLibrary.branchMostCheckouts()
@@ -91,16 +100,57 @@ def showLibraryStats():
 # and their due dates, and then calls the proper function
 # from the UserData module.
 def showUserStats():
-    options = ["Which books has the user placed on hold", "Which films has the user checked out"]
+        mediums = ["Book", "Film", "Audio"]
+        userOptions = ["Rental", "Hold"]
 
-    for i in range(len(options)):
-		print str(i) + ": " + options[i]
+	for medium in mediums:
+		print medium
+	# Carlos change
+	print "\n"
+		
+	selectMedium = raw_input("Please select from above: ")
+	print "\n"
 
-	selection = int(raw_input("Please enter the number for your selection: "))
-	if options[selection] == "Which books has the user placed on hold":
-		UserData.getUserHolds()
-	elif options[selection] == "Which films has the user checked out":
-		UserData.getUserRentals()
+        print "Please enter your selection: "
+	if selectMedium == "Book":
+		for attr in userOptions:
+			print attr
+		choice = raw_input("Please select a search parameter: ").lower()
+		if choice == str("rental"):
+                        print "\n"
+			UserData.getUserBookRentals()
+		elif choice == str("hold"):
+                        print "\n"
+			UserData.getUserBookHolds()
+		else:
+                        print "Invalid selection."
+                        
+	elif selectMedium == "Film":
+		for attr in userOptions:
+			print attr
+		choice = raw_input("Please select a search parameter: ").lower()
+		if choice == str("rental"):
+                        print "\n"
+			UserData.getUserFilmRentals()
+		elif choice == str("hold"):
+                        print "\n"
+			UserData.getUserFilmHolds()
+		else:
+                        print "Invalid selection."
+                        
+	elif selectMedium == "Audio":
+		for attr in userOptions:
+			print attr
+		choice = raw_input("Please select a search parameter: ").lower()
+		if choice == "Hold":
+                        print "\n"
+			UserData.getUserAudioRentals()
+		elif choice == "Rental":
+                        print "\n"
+			UserData.getUserAudioHolds()
+		else:
+                        print "Invalid selection."
+                        
 	else:
 		print "Invalid selection."
 
