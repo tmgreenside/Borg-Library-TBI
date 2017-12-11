@@ -91,9 +91,9 @@ def showLibraryStats():
 # and their due dates, and then calls the proper function
 # from the UserData module.
 def showUserStats():
-        options = ["Which books has the user placed on hold", "Which films has the user checked out"]
+    options = ["Which books has the user placed on hold", "Which films has the user checked out"]
 
-        for i in range(len(options)):
+    for i in range(len(options)):
 		print str(i) + ": " + options[i]
 
 	selection = int(raw_input("Please enter the number for your selection: "))
@@ -118,6 +118,8 @@ def main():
 			showUserStats()
 		elif choice == "Show Library Stats":
 			showLibraryStats()
+		elif choice == "View Full Branch Inventories":
+			Inventory.viewFullBranchInventory()
 		
 
 

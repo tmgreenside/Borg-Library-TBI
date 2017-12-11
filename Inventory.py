@@ -194,3 +194,6 @@ def findAudioTitle():
 
     except mysql.connector.Error as err:
         print (err)
+
+def viewFullBranchInventory():
+    # Carlos fill in here
