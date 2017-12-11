@@ -4,15 +4,17 @@
 
 import Inventory
 import BorgLibrary
+import UserData
 
 # This function displays all main menu items and gets
 # a selection from the user.
 def selectMainMenu():
-	options = ["Search Items", "Show Holds", "Show Library Stats", "View Full Branch Inventories", "Exit"]
-
+	options = ["Search Items", "Show User Stats", "Show Library Stats", "View Full Branch Inventories", "Exit"]
+        
 	for i in range(len(options)):
 		print str(i) + ": " + options[i]
-
+	# Carlos change
+        print "\n"
 	selection = int(raw_input("Please enter the number for your selection: "))
 
 	return options[selection]
@@ -29,6 +31,9 @@ def searchInventory():
 
 	for medium in mediums:
 		print medium
+	# Carlos change
+	print "\n"
+		
 	selectMedium = raw_input("Please select from above: ")
 
 	if selectMedium == "Book":
@@ -75,21 +80,45 @@ def showLibraryStats():
 		BorgLibrary.filmsNeverCheckedOut()
 	elif options[selection] == "What is the most popular book in stock":
 		BorgLibrary.mostPopularBook()
+	# Carlos change
+	else:
+		print "Invalid selection."
+		
+# Carlos change
+# If the user wants to view their current Rentals or Holds,
+# this function allows the user to find out what holds they
+# have place and their pickup deadlines or their checkouts
+# and their due dates, and then calls the proper function
+# from the UserData module.
+def showUserStats():
+        options = ["Which books has the user placed on hold", "Which films has the user checked out"]
 
+        for i in range(len(options)):
+		print str(i) + ": " + options[i]
 
+	selection = int(raw_input("Please enter the number for your selection: "))
+	if options[selection] == "Which books has the user placed on hold":
+		UserData.getUserHolds()
+	elif options[selection] == "Which films has the user checked out":
+		UserData.getUserRentals()
+	else:
+		print "Invalid selection."
 
 def main():
 	print "Welcome to the Borg Library System\n"
 
 	while True:
 		choice = selectMainMenu();
-
 		if choice == "Exit":
 			break
 		elif choice == "Search Items":
 			searchInventory()
+		# Carlos change
+		elif choice == "Show User Stats":
+			showUserStats()
 		elif choice == "Show Library Stats":
 			showLibraryStats()
+		
 
 
 

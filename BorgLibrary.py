@@ -4,10 +4,10 @@ import mysql.connector
 def branchMostCheckouts():
 	try:
 	# connection info
-		usr = 'trevapp'
-		pwd = 'bowers321'
-		hst = 'localhost'
-		dab = 'tgreenside_DB'
+		# usr = 'trevapp'
+		# pwd = 'bowers321'
+		# hst = 'localhost'
+		# dab = 'tgreenside_DB'
 		# create a connection
 		con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
 		rs = con.cursor()
@@ -27,11 +27,11 @@ def branchMostCheckouts():
 
 def filmsNeverCheckedOut():
 	try:
-		# connection info
-	    usr = 'trevapp'
-	    pwd = 'bowers321'
-	    hst = 'localhost'
-	    dab = 'tgreenside_DB'
+            # connection info
+##	    usr = 'trevapp'
+##	    pwd = 'bowers321'
+##	    hst = 'localhost'
+##	    dab = 'tgreenside_DB'
 	    # create a connection
 	    con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
 	    rs = con.cursor()
@@ -48,13 +48,13 @@ def filmsNeverCheckedOut():
 	except mysql.connector.Error as err:
 		print (err)
 
-def BorgLibrary.mostPopularBook():
+def mostPopularBook():
 	try:
-		# connection info
-	    usr = 'trevapp'
-	    pwd = 'bowers321'
-	    hst = 'localhost'
-	    dab = 'tgreenside_DB'
+            # connection info
+##	    usr = #'trevapp'
+##	    pwd = #'bowers321'
+##	    hst = #'localhost'
+##	    dab = #'tgreenside_DB'
 	    # create a connection
 	    con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
 	    rs = con.cursor()

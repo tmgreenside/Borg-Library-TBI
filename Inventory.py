@@ -4,10 +4,10 @@ import mysql.connector
 def findBookTitle():
     try:
         # connection info
-        usr = 'trevapp'
-        pwd = 'bowers321'
-        hst = 'localhost'
-        dab = 'tgreenside_DB'
+##        usr = 'trevapp'
+##        pwd = 'bowers321'
+##        hst = 'localhost'
+##        dab = 'tgreenside_DB'
         # create a connection
         con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
 
@@ -37,10 +37,10 @@ def findBookTitle():
 def findBookAuthor():
     try:
         # connection info
-        usr = 'trevapp'
-        pwd = 'bowers321'
-        hst = 'localhost'
-        dab = 'tgreenside_DB'
+##        usr = 'trevapp'
+##        pwd = 'bowers321'
+##        hst = 'localhost'
+##        dab = 'tgreenside_DB'
         # create a connection
         con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
 
@@ -69,10 +69,10 @@ def findBookAuthor():
 def findFilmTitle():
     try:
         # connection info
-        usr = 'trevapp'
-        pwd = 'bowers321'
-        hst = 'localhost'
-        dab = 'tgreenside_DB'
+##        usr = 'trevapp'
+##        pwd = 'bowers321'
+##        hst = 'localhost'
+##        dab = 'tgreenside_DB'
         # create a connection
         con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
 
@@ -102,10 +102,10 @@ def findFilmTitle():
 def findFilmDirector():
     try:
         # connection info
-        usr = 'trevapp'
-        pwd = 'bowers321'
-        hst = 'localhost'
-        dab = 'tgreenside_DB'
+##        usr = 'trevapp'
+##        pwd = 'bowers321'
+##        hst = 'localhost'
+##        dab = 'tgreenside_DB'
         # create a connection
         con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
 
@@ -134,10 +134,10 @@ def findFilmDirector():
 def findAudioArtist():
     try:
         # connection info
-        usr = 'trevapp'
-        pwd = 'bowers321'
-        hst = 'localhost'
-        dab = 'tgreenside_DB'
+##        usr = 'trevapp'
+##        pwd = 'bowers321'
+##        hst = 'localhost'
+##        dab = 'tgreenside_DB'
         # create a connection
         con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
 
@@ -166,10 +166,10 @@ def findAudioArtist():
 def findAudioTitle():
     try:
         # connection info
-        usr = 'trevapp'
-        pwd = 'bowers321'
-        hst = 'localhost'
-        dab = 'tgreenside_DB'
+##        usr = 'trevapp'
+##        pwd = 'bowers321'
+##        hst = 'localhost'
+##        dab = 'tgreenside_DB'
         # create a connection
         con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
 
