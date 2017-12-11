@@ -7,7 +7,7 @@ import Inventory
 # This function displays all main menu items and gets
 # a selection from the user.
 def selectMainMenu():
-	options = ["Search Items", "Exit"]
+	options = ["Search Items", "Show Holds", "Show Library Stats", "Exit"]
 
 	for i in range(len(options)):
 		print str(i) + ": " + options[i]
@@ -57,6 +57,19 @@ def searchInventory():
 	else:
 		print "Invalid selection."
 
+# If the user wants to view Library Stats, this function
+# allows the user to tell which stats to view, and then
+# calls the proper function from the BorgLibrary module.
+def showLibraryStats():
+	options = ["Which branch has most checkouts"]
+
+	for i in range(len(options)):
+		print str(i) + ": " + options[i]
+
+	selection = int(raw_input("Please enter the number for your selection: "))
+
+	if options[selection] == "Which branch has most checkouts":
+		BorgLibrary.branchMostCheckouts()
 
 
 
@@ -70,6 +83,9 @@ def main():
 			break
 		elif choice == "Search Items":
 			searchInventory()
+		elif choice == "Show Library Stats":
+			showLibraryStats()
+
 
 
 main()
