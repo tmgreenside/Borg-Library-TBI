@@ -62,7 +62,7 @@ def searchInventory():
 # allows the user to tell which stats to view, and then
 # calls the proper function from the BorgLibrary module.
 def showLibraryStats():
-	options = ["Which branch has most checkouts"]
+	options = ["Which branch has most checkouts", "Which films have never been checked out", "What is the most popular book in stock"]
 
 	for i in range(len(options)):
 		print str(i) + ": " + options[i]
@@ -71,6 +71,10 @@ def showLibraryStats():
 
 	if options[selection] == "Which branch has most checkouts":
 		BorgLibrary.branchMostCheckouts()
+	elif options[selection] == "Which films have never been checked out":
+		BorgLibrary.filmsNeverCheckedOut()
+	elif options[selection] == "What is the most popular book in stock":
+		BorgLibrary.mostPopularBook()
 
 
 
