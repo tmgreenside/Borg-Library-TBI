@@ -2,12 +2,14 @@
 
 """
 
+import Inventory
+
 # This function displays all main menu items and gets
 # a selection from the user.
 def selectMainMenu():
 	options = ["Search Items", "Exit"]
 
-	for i in range(options.length):
+	for i in range(len(options)):
 		print str(i) + ": " + options[i]
 
 	selection = int(raw_input("Please enter the number for your selection: "))
@@ -24,12 +26,16 @@ def searchInventory():
 	bookAttrs = ["Title", "Author"]
 	audioAttrs = ["Title", "Artist"]
 
+	for medium in mediums:
+		print medium
 	selectMedium = raw_input("Please select from above: ")
 
-	if selectMedium = "Book":
-		
-	elif selectMedium = "Film":
-	elif selectMedium = "Audio":
+	if selectMedium == "Book":
+		Inventory.findBookTitle()
+	elif selectMedium == "Film":
+		print "Not ready yet"
+	elif selectMedium == "Audio":
+		print "Not ready yet"
 	else:
 		print "Invalid selection."
 
