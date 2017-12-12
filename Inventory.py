@@ -209,6 +209,10 @@ def findAudioTitle():
 # This function 
 def viewFullBranchInventory():
     # Carlos fill in here
+
+    # problem with this function: it only does the Audio inventory. Have three new functions,
+    # and a fourth function called from main that asks the user which of the three inventories
+    # to show. Then calls appropriate display all inventory function
     try:
         # connection info
         usr = 'trevapp'
