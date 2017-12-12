@@ -1,15 +1,14 @@
 import mysql.connector
-import config
 
 # Option #3 Query
 # Carlos changes
 def getUserBookHolds():
     try:
         # connection info
-##        usr = 
-##        pwd = 
-##        hst = 
-##        dab = 
+        usr = 'trevapp'
+        pwd = 'bowers321'
+        hst = 'localhost'
+        dab = 'tgreenside_DB'
         # create a connection
         con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
 
@@ -41,10 +40,11 @@ def getUserBookHolds():
 def getUserFilmHolds():
     try:
         # connection info
-##        usr = 
-##        pwd = 
-##        hst = 
-##        dab = 
+        usr = 'trevapp'
+        pwd = 'bowers321'
+        hst = 'localhost'
+        dab = 'tgreenside_DB'
+
         # create a connection
         con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
 
@@ -76,10 +76,10 @@ def getUserFilmHolds():
 def getUserAudioHolds():
     try:
         # connection info
-##        usr = 
-##        pwd = 
-##        hst = 
-##        dab = 
+        usr = 'trevapp'
+        pwd = 'bowers321'
+        hst = 'localhost'
+        dab = 'tgreenside_DB'
         # create a connection
         con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
 
@@ -111,10 +111,10 @@ def getUserAudioHolds():
 def getUserFilmRentals():
     try:
         # connection info
-##        usr = 
-##        pwd = 
-##        hst = 
-##        dab = 
+        usr = 'trevapp'
+        pwd = 'bowers321'
+        hst = 'localhost'
+        dab = 'tgreenside_DB'
         # create a connection
         con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
 
@@ -147,10 +147,10 @@ def getUserFilmRentals():
 def getUserBookRentals():
     try:
         # connection info
-##        usr = 
-##        pwd = 
-##        hst = 
-##        dab = 
+        usr = 'trevapp'
+        pwd = 'bowers321'
+        hst = 'localhost'
+        dab = 'tgreenside_DB'
         # create a connection
         con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
 
@@ -183,10 +183,10 @@ def getUserBookRentals():
 def getUserAudioRentals():
     try:
         # connection info
-##        usr = 
-##        pwd = 
-##        hst = 
-##        dab = 
+        usr = 'trevapp'
+        pwd = 'bowers321'
+        hst = 'localhost'
+        dab = 'tgreenside_DB'
         # create a connection
         con = mysql.connector.connect(user=usr,password=pwd, host=hst, database=dab)
 
