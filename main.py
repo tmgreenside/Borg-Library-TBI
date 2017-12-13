@@ -42,30 +42,30 @@ def searchInventory():
 			print attr
 		choice = raw_input("Please select a search parameter: ").lower()
 		if choice == "title":
-                        print "\n"
+			print "\n"
 			Inventory.findBookTitle()
 		elif choice == "author":
-                        print "\n"
+			print "\n"
 			Inventory.findBookAuthor()
 	elif selectMedium == "Film":
 		for attr in filmAttrs:
 			print attr
 		choice = raw_input("Please select a search parameter: ").lower()
 		if choice == "title":
-                        print "\n"
+			print "\n"
 			Inventory.findFilmTitle()
 		elif choice == "director":
-                        print "\n"
+			print "\n"
 			Inventory.findFilmDirector()
 	elif selectMedium == "Audio":
-		for attr in bookAttrs:
+		for attr in audioAttrs:
 			print attr
 		choice = raw_input("Please select a search parameter: ").lower()
 		if choice == "title":
-                        print "\n"
+			print "\n"
 			Inventory.findAudioTitle()
 		elif choice == "artist":
-                        print "\n"
+			print "\n"
 			Inventory.findAudioArtist()
 	else:
 		print "Invalid selection."
