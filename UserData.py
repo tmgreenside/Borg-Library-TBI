@@ -1,7 +1,7 @@
 import mysql.connector
 
-# Option #3 Query
-# Carlos changes
+# This method displays all current holds for all library
+# members.
 def getUserBookHolds():
     try:
         # connection info
@@ -35,8 +35,7 @@ def getUserBookHolds():
     except mysql.connector.Error as err:
         print (err)
 
-# Option #3 Query
-# Carlos changes
+# This method displays films put on hold by a particular user.
 def getUserFilmHolds():
     try:
         # connection info
@@ -56,7 +55,7 @@ def getUserFilmHolds():
         rs = con.cursor()
         # query used to display the user's current film holds in their account which returns the member's id,
         # hold id, film title, director name, and pickup deadline of the book by nearest pickup deadline date
-        query = "SELECT lm.memberID, h.hold_id, f.title, dc.directorName, h.hold_expiration AS PICKUP_DEADLINE FROM (LibraryMember lm JOIN Hold h USING (memberID) JOIN Inventory i USING (inventory_id) JOIN Film m ON f.filmID = i.copy_id) JOIN DirectorCredits dc USING (filmID) WHERE lm.memberID = '" + str(member_id) + " ' GROUP BY lm.memberID, h.hold_id, f.title, dc.directorName ORDER BY PICKUP_DEADLINE ASC;"
+        query = "SELECT lm.memberID, h.hold_id, m.title, dc.directorName, h.hold_expiration AS PICKUP_DEADLINE FROM (LibraryMember lm JOIN Hold h USING (memberID) JOIN Inventory i USING (inventory_id) JOIN Film m ON m.filmID = i.copy_id) JOIN DirectorCredits dc USING (filmID) WHERE lm.memberID = '" + str(member_id) + " ' GROUP BY lm.memberID, h.hold_id, m.title, dc.directorName ORDER BY PICKUP_DEADLINE ASC;"
 
         rs.execute(query, (member_id))
 
@@ -71,8 +70,8 @@ def getUserFilmHolds():
     except mysql.connector.Error as err:
         print (err)
 
-# Option #3 Query
-# Carlos changes
+# This method displays audio titles a particular user has placed
+# on hold.
 def getUserAudioHolds():
     try:
         # connection info

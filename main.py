@@ -31,7 +31,6 @@ def searchInventory():
 
 	for medium in mediums:
 		print medium
-	# Carlos change
 	print "\n"
 		
 	selectMedium = raw_input("Please select from above: ")
@@ -89,11 +88,9 @@ def showLibraryStats():
 		BorgLibrary.filmsNeverCheckedOut()
 	elif options[selection] == "What is the most popular book in stock":
 		BorgLibrary.mostPopularBook()
-	# Carlos change
 	else:
 		print "Invalid selection."
 		
-# Carlos change
 # If the user wants to view their current Rentals or Holds,
 # this function allows the user to find out what holds they
 # have place and their pickup deadlines or their checkouts
@@ -153,6 +150,9 @@ def showUserStats():
 	else:
 		print "Invalid selection."
 
+# This method is called on startup and continually shows
+# the user the menu options. Each option calls the
+# relevant function
 def main():
 	print "Welcome to the Borg Library System\n"
 

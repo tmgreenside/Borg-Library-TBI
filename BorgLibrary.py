@@ -1,6 +1,8 @@
 import mysql.connector
 
-# 
+# This method performs a query on the database
+# to find out which branch has the most materials
+# checked out.
 def branchMostCheckouts():
 	try:
 		# connection info
@@ -25,6 +27,8 @@ def branchMostCheckouts():
 	except mysql.connector.Error as err:
 		print (err)
 
+# This method displays a list of films that no member has ever
+# checked out.
 def filmsNeverCheckedOut():
 	try:
 		# connection info
@@ -50,6 +54,8 @@ def filmsNeverCheckedOut():
 	except mysql.connector.Error as err:
 		print (err)
 
+# This method tells which book title has been checked out the
+# greatest number of times.
 def mostPopularBook():
 	try:
 		# connection info
@@ -74,6 +80,8 @@ def mostPopularBook():
 	except mysql.connector.Error as err:
 		print (err)
 
+# This method allows a library employee to add a new member
+# to the library database.
 def addNewMember():
 	print "You must use an employee login to continue."
 	userEntry = raw_input("Employee ID: ")
@@ -93,6 +101,7 @@ def addNewMember():
 
 		rs.execute(query)
 
+		# only continue if user is authenticated
 		authenticated = False
 
 		for (eid, ePassword) in rs:
