@@ -55,7 +55,7 @@ def findBookAuthor():
         # query used to retrieve all books written by author name and the number of copies available
         # in the inventory for the book at each branch location in descending order
         query = "SELECT a.authorName, b.title, lb.branchName, COUNT(i.inventory_id) AS NUM_COPIES FROM (LibraryBranch lb JOIN Inventory i USING (branchID) JOIN Book b ON b.ISBN = i.copy_id) JOIN AuthorCredits a USING (ISBN) WHERE a.authorName = '" + authorName + "' GROUP BY a.authorName, b.title, lb.branchName ORDER BY NUM_COPIES DESC"
-        rs.execute(query, (authorName))
+        rs.execute(query)
         
         # print the result
         print "Author Name | Title | Branch Name | Num Copies"
@@ -481,6 +481,10 @@ def addToInventory():
             newItemFormat = "Book"
             newItemCondition = raw_input("Enter the book's condition: ")
             newBranchID = raw_input("Enter the library branch's ID that has the book: ")
+
+            insertion = "INSERT INTO Inventory VALUES (" + str(newInventory_id) + "," + str(newCopy_id) + ",'" + str(newItemFormat) + "', '" + str(newItemCondition) + "'," + str(newBranchID) + ");"
+            # print insertion
+            rs.execute(insertion)
                         #UNREAD RESULT FOUND MESSAGE DISPLAYS AFTER ENTERING ALL USER INPUT
             #NEED TO FIGURE OUT WHY NEW BOOK IS NOT DISPLAYED IN INVENTORY AFTER BEING ADDED
         elif selectMedium == "Film":
@@ -490,6 +494,9 @@ def addToInventory():
             newItemFormat = "Film"
             newItemCondition = raw_input("Enter the film's condition: ")
             newBranchID = raw_input("Enter the library branch's ID that has the film: ")
+            insertion = "INSERT INTO Inventory VALUES (" + str(newInventory_id) + "," + str(newCopy_id) + ",'" + str(newItemFormat) + "', '" + str(newItemCondition) + "'," + str(newBranchID) + ");"
+            # print insertion
+            rs.execute(insertion)
         
         elif selectMedium == "Audio":
             addAudio()
@@ -498,6 +505,9 @@ def addToInventory():
             newItemFormat = "Audio"
             newItemCondition = raw_input("Enter the audio's condition: ")
             newBranchID = raw_input("Enter the library branch's ID that has the audio: ")
+            insertion = "INSERT INTO Inventory VALUES (" + str(newInventory_id) + "," + str(newCopy_id) + ",'" + str(newItemFormat) + "', '" + str(newItemCondition) + "'," + str(newBranchID) + ");"
+            # print insertion
+            rs.execute(insertion)
 
         else:
             print "Invalid selection."

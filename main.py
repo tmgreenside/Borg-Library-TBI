@@ -100,9 +100,8 @@ def showLibraryStats():
 # and their due dates, and then calls the proper function
 # from the UserData module.
 def showUserStats():
-        mediums = ["Book", "Film", "Audio"]
-        userOptions = ["Rental", "Hold"]
-
+	mediums = ["Book", "Film", "Audio"]
+	userOptions = ["Rental", "Hold"]
 	for medium in mediums:
 		print medium
 	# Carlos change
@@ -111,45 +110,45 @@ def showUserStats():
 	selectMedium = raw_input("Please select from above: ")
 	print "\n"
 
-        print "Please enter your selection: "
+	print "Please enter your selection: "
 	if selectMedium == "Book":
 		for attr in userOptions:
 			print attr
 		choice = raw_input("Please select a search parameter: ").lower()
 		if choice == str("rental"):
-                        print "\n"
+			print "\n"
 			UserData.getUserBookRentals()
 		elif choice == str("hold"):
-                        print "\n"
+			print "\n"
 			UserData.getUserBookHolds()
 		else:
-                        print "Invalid selection."
+			print "Invalid selection."
                         
 	elif selectMedium == "Film":
 		for attr in userOptions:
 			print attr
 		choice = raw_input("Please select a search parameter: ").lower()
 		if choice == str("rental"):
-                        print "\n"
+			print "\n"
 			UserData.getUserFilmRentals()
 		elif choice == str("hold"):
-                        print "\n"
+			print "\n"
 			UserData.getUserFilmHolds()
 		else:
-                        print "Invalid selection."
+			print "Invalid selection."
                         
 	elif selectMedium == "Audio":
 		for attr in userOptions:
 			print attr
 		choice = raw_input("Please select a search parameter: ").lower()
 		if choice == "Hold":
-                        print "\n"
+			print "\n"
 			UserData.getUserAudioRentals()
 		elif choice == "Rental":
-                        print "\n"
+			print "\n"
 			UserData.getUserAudioHolds()
 		else:
-                        print "Invalid selection."
+			print "Invalid selection."
                         
 	else:
 		print "Invalid selection."

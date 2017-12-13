@@ -44,6 +44,7 @@ def filmsNeverCheckedOut():
 		print "Title | Film Language | Length | Rating | Release Year | Directed By"
 		for (title, filmLanguage, filmLength, rating, releaseYear, directorName) in rs:
 			print str(title) + " | " + str(filmLanguage) + " | " + str(filmLength) + " | " + str(rating) + " | " + str(releaseYear) + " | " + str(directorName)
+		print ""
 		rs.close()
 		con.close()
 	except mysql.connector.Error as err:
