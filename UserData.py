@@ -105,8 +105,7 @@ def getUserAudioHolds():
     except mysql.connector.Error as err:
         print (err)
         
-# Option #4 Query
-# Carlos changes
+# This method returns the films a user currently has checked out.
 def getUserFilmRentals():
     try:
         # connection info
@@ -141,8 +140,7 @@ def getUserFilmRentals():
     except mysql.connector.Error as err:
         print (err)
         
-# Option #4 Query
-# Carlos changes
+# This method returns the books a user currently has checked out.
 def getUserBookRentals():
     try:
         # connection info
@@ -177,8 +175,7 @@ def getUserBookRentals():
     except mysql.connector.Error as err:
         print (err)
         
-# Option #4 Query
-# Carlos changes
+# This method returns the audio recordings a user currently has checked out.
 def getUserAudioRentals():
     try:
         # connection info
@@ -212,17 +209,3 @@ def getUserAudioRentals():
 
     except mysql.connector.Error as err:
         print (err)
-
-# Option #5 Query
-
-# Option #6 Query
-
-# Option #7 Query
-
-# Option #8 Query
-
-# Option #9 Query
-
-# Option #10 Query
-
-# Option #11 Query

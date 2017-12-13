@@ -138,7 +138,7 @@ def findFilmDirector():
     except mysql.connector.Error as err:
         print (err)
 
-# This function searches Audio by Artis
+# This function searches Audio by Artist
 def findAudioArtist():
     try:
         # connection info
@@ -206,19 +206,10 @@ def findAudioTitle():
     except mysql.connector.Error as err:
         print (err)
 
-# This function 
+# This function displays the entire inventory, limited to user's choice
+# of medium, that a particular branch carries. 
 def viewFullBranchInventory():
-    # Carlos fill in here
-
-    # problem with this function: it only does the Audio inventory. Have three new functions,
-    # and a fourth function called from main that asks the user which of the three inventories
-    # to show. Then calls appropriate display all inventory function
     try:
-        # connection info
-        # usr = 'cvillagomez'
-        # pwd = 'cvillagomez79849078'
-        # hst = '147.222.163.1'
-        # dab = 'cvillagomez_DB'
         usr = 'trevapp'
         pwd = 'bowers321'
         hst = 'localhost'
@@ -305,8 +296,7 @@ def viewFullBranchInventory():
     except mysql.connector.Error as err:
         print (err)
         
-#NEEDS TO BE FIXED...CAN ENTER ALL INFORMATION BUT NEW BOOK IS NOT DISPLAYED AFTER BEING ADDED
-#SAME CHANGES WILL HAVE TO BE MADE TO addFilm and addAudio as addBook
+# This function adds a book to a branch inventory.
 def addBook():
     try:
         # connection info
@@ -341,21 +331,12 @@ def addBook():
         
         con.commit()
         rs.close()
-
-                
-                
-##                rs2 = con.cursor(buffered=True)
-##                rs2.execute("SELECT * FROM AuthorCredits;")
-##      insert2 = "INSERT INTO AuthorCredits VALUES (" + str(newISBN) + str(newAuthorName) + "');"
-##      rs2.execute(insert2)
-##      con.commit()
-##                rs2.close()
-        
         con.close()
 
     except mysql.connector.Error as err:
         print (err)
-    
+
+# This function adds an audio recording to a branch inventory.    
 def addAudio():
     try:
         # connection info
@@ -393,6 +374,7 @@ def addAudio():
     except mysql.connector.Error as err:
         print (err)
 
+# This function adds a film to Film records.
 def addFilm():
     try:
         # connection info
@@ -430,6 +412,9 @@ def addFilm():
     except mysql.connector.Error as err:
         print (err)
 
+# This function calls either addBook, addFilm, or addAudio
+# per the user choice to add an item to a particular branch
+# inventory.
 def addToInventory():
     print "You must use an employee login to continue."
     userEntry = raw_input("Employee ID: ")
